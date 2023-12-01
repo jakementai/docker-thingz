@@ -18,16 +18,6 @@ services:
     ports:
       - "19092:19092"
 
-  minio:
-    image: minio/minio:latest
-    ports:
-      - 9000:9000
-      - 9001:9001
-    environment:
-      - MINIO_ROOT_USER=root
-      - MINIO_ROOT_PASSWORD=password
-    command: server /data --console-address ":9001"
-
   kowl:
     image: quay.io/cloudhut/kowl:v1.4.0
     environment:
