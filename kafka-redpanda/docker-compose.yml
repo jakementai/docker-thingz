@@ -11,13 +11,13 @@ services:
       - --node-id=0
       - --check=false
       - --kafka-addr
-      - PLAINTEXT://0.0.0.0:29092,OUTSIDE://0.0.0.0:19092
+      - PLAINTEXT://0.0.0.0:29092,OUTSIDE://0.0.0.0:9092
       - --advertise-kafka-addr
-      - PLAINTEXT://redpanda:29092,OUTSIDE://localhost:19092
+      - PLAINTEXT://redpanda:29092,OUTSIDE://localhost:9092
     image: redpandadata/redpanda:latest
     ports:
-      - "19092:19092"
-      
+      - '9092:9092'
+
   kafka-console:
     image: docker.redpanda.com/redpandadata/console:v2.2.4
     entrypoint: /bin/sh

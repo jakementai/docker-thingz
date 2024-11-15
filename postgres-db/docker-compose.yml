@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  funding-postgres:
+    container_name: funding_postgres
+    image: postgres:14.1
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: funding
+      POSTGRES_USER: funding
+      POSTGRES_PASSWORD: funding
+  funding-postgres-test:
+    container_name: funding_postgres_test
+    image: postgres:14.1
+    restart: always
+    ports:
+      - '5433:5432'
+    environment:
+      POSTGRES_DB: funding-test
+      POSTGRES_USER: funding
+      POSTGRES_PASSWORD: funding
